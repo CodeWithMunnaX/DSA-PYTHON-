@@ -1,0 +1,16 @@
+class ThirdLargest:
+    def Largest(self,arr):
+        largest = max(arr)
+        second_largest = float('-inf')
+        third_largest = float('-inf')
+
+        for value in arr:
+            if second_largest < value and largest > value:
+                second_largest = value
+        for value in arr:
+            if third_largest < value and second_largest > value:
+                third_largest = value
+        return third_largest
+
+data1 = ThirdLargest()
+print(data1.Largest([-1,-2,-3,-4,-5]))
